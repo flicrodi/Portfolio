@@ -178,25 +178,25 @@ footer{padding:28px 8vw;border-top:1px solid var(--gray);display:flex;justify-co
 </section>
 
 <div id="projets-grid">
-  <div class="proj-cell">
+  <div class="proj-cell" onclick="goToReal('maquettage')">
     <img src="images/maquettage.jpg" alt="Maquettage">
     <div class="proj-bg-inner">MAQUETTAGE</div>
     <div class="proj-label">Webdesign</div>
     <div class="proj-overlay"><div class="proj-tag">UI / UX · Figma</div><div class="proj-name">Maquettage & Webdesign</div></div>
   </div>
-  <div class="proj-cell">
+  <div class="proj-cell" onclick="goToReal('identite')">
     <img src="images/branding.jpg" alt="Branding">
     <div class="proj-bg-inner">BRANDING</div>
     <div class="proj-label">Identité Visuelle</div>
     <div class="proj-overlay"><div class="proj-tag">Branding · Design</div><div class="proj-name">Identité Visuelle</div></div>
   </div>
-  <div class="proj-cell">
+  <div class="proj-cell" onclick="goToReal('print')">
     <img src="images/print.jpg" alt="Print">
     <div class="proj-bg-inner">PRINT</div>
     <div class="proj-label">Conception Print</div>
     <div class="proj-overlay"><div class="proj-tag">Print · Communication</div><div class="proj-name">Conception Print</div></div>
   </div>
-  <div class="proj-cell">
+  <div class="proj-cell" onclick="goToReal('seo')">
     <!-- <img src="images/seo.jpg" alt="SEO"> -->
     <div class="proj-bg-inner">SEO</div>
     <div class="proj-label">SEO · E-commerce</div>
@@ -311,6 +311,11 @@ document.querySelectorAll('a,button,.proj-cell,.real-item').forEach(el=>{
 });
 const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function goToReal(cat){
+  const btn = document.querySelector(`.real-cat[onclick="filterReal('${cat}',this)"]`);
+  if(btn){ filterReal(cat, btn); }
+  document.getElementById('realisations').scrollIntoView({behavior:'smooth'});
+}
 function filterReal(cat,btn){
   document.querySelectorAll('.real-cat').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
