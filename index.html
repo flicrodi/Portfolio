@@ -121,10 +121,12 @@ section{padding:100px 8vw}
 .real-item.visible{display:block}
 .real-inner{width:100%;height:100%;transition:transform .4s;display:flex;align-items:center;justify-content:center}
 .real-item:hover .real-inner{transform:scale(1.05)}
-.real-overlay{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;opacity:0;transition:opacity .3s;padding:16px;text-align:center}
+.real-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 60%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;transition:opacity .35s;z-index:2}
 .real-item:hover .real-overlay{opacity:1}
-.real-overlay-tag{font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--pink);text-transform:uppercase}
-.real-overlay-text{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:.06em}
+.real-overlay-tag{font-size:9px;font-weight:700;letter-spacing:.15em;color:var(--pink);text-transform:uppercase;margin-bottom:5px}
+.real-overlay-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:.05em}
+.real-label{position:absolute;top:16px;left:16px;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);z-index:3;transition:color .3s}
+.real-item:hover .real-label{color:var(--pink)}
 .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 .ph-1{background:linear-gradient(135deg,#1a0d1a,#2d1020)}.ph-2{background:linear-gradient(135deg,#0d1a0d,#1a2d10)}.ph-3{background:linear-gradient(135deg,#0d0d1a,#10102d)}.ph-4{background:linear-gradient(135deg,#1a1505,#2d2510)}.ph-5{background:linear-gradient(135deg,#1a0d0d,#2d1010)}.ph-6{background:linear-gradient(135deg,#0d1a1a,#102d2d)}.ph-7{background:linear-gradient(135deg,#1a1a0d,#2d2d10)}.ph-8{background:linear-gradient(135deg,#150d1a,#2a1030)}.ph-9{background:linear-gradient(135deg,#0d150d,#152015)}
 .ph-letter{font-family:'Bebas Neue',sans-serif;font-size:72px;opacity:.07;color:#fff;letter-spacing:.1em;user-select:none}
@@ -262,13 +264,13 @@ footer{padding:28px 8vw;border-top:1px solid var(--gray);display:flex;justify-co
     <button class="real-cat" onclick="filterReal('seo',this)">SEO & E-commerce</button>
   </div>
   <div class="real-grid">
-    <div class="real-item visible" data-cat="maquettage"><div class="real-inner ph ph-1"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Impact Boxing</div></div></div>
-    <div class="real-item visible" data-cat="maquettage"><div class="real-inner ph ph-3"><div class="ph-letter">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Nutritionniste</div></div></div>
-    <div class="real-item visible" data-cat="identite" onclick="window.location.href='florever.html'" style="cursor:pointer"><div class="real-inner ph ph-2"><img src="images/florever-mockup-enseigne.jpg" alt="Flor'Ever" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"><div class="ph-letter" style="display:none">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Flor'Ever</div></div></div>
-    <div class="real-item visible" data-cat="identite"><div class="real-inner ph ph-5"><div class="ph-letter">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Le Fournil des Alpes</div></div></div>
-    <div class="real-item visible" data-cat="identite"><div class="real-inner ph ph-8"><div class="ph-letter">03</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Caféine</div></div></div>
-    <div class="real-item visible" data-cat="print"><div class="real-inner ph ph-4"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Conception Print</div><div class="real-overlay-text">Book Cover</div></div></div>
-    <div class="real-item visible" data-cat="seo"><div class="real-inner ph ph-6"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">SEO · E-commerce</div><div class="real-overlay-text">Boutique SEO-first</div></div></div>
+    <div class="real-item visible" data-cat="maquettage"><div class="real-label">Webdesign</div><div class="real-inner ph ph-1"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Impact Boxing</div></div></div>
+    <div class="real-item visible" data-cat="maquettage"><div class="real-label">Webdesign</div><div class="real-inner ph ph-3"><div class="ph-letter">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Nutritionniste</div></div></div>
+    <div class="real-item visible" data-cat="identite" onclick="window.location.href='florever.html'" style="cursor:pointer"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-2"><img src="images/florever-mockup-enseigne.jpg" alt="Flor'Ever" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"><div class="ph-letter" style="display:none">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Flor'Ever</div></div></div>
+    <div class="real-item visible" data-cat="identite"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-5"><div class="ph-letter">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Le Fournil des Alpes</div></div></div>
+    <div class="real-item visible" data-cat="identite"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-8"><div class="ph-letter">03</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Caféine</div></div></div>
+    <div class="real-item visible" data-cat="print"><div class="real-label">Print</div><div class="real-inner ph ph-4"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Conception Print</div><div class="real-overlay-text">Book Cover</div></div></div>
+    <div class="real-item visible" data-cat="seo"><div class="real-label">SEO · E-commerce</div><div class="real-inner ph ph-6"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">SEO · Digital</div><div class="real-overlay-text">Boutique SEO-first</div></div></div>
   </div>
 </section>
 
