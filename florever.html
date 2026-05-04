@@ -82,15 +82,12 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
 .color-hex{position:relative;z-index:1;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase;font-family:monospace}
 
 /* MOCKUPS — fond terracotta clair */
-.mockups-section{background:var(--clay-light);padding:80px 0 100px}
-.mockups-header{padding:0 60px 48px;max-width:1400px;margin:0 auto}
-.mockup-main{width:100%;overflow:hidden}
-.mockup-main img{width:100%;max-height:600px;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-.mockup-main:hover img{transform:scale(1.02)}
-.mockup-duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px}
-.mockup-half{overflow:hidden}
-.mockup-half img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-.mockup-half:hover img{transform:scale(1.03)}
+.mockups-section{background:var(--clay-light);padding:80px 60px 100px}
+.mockups-header{max-width:1400px;margin:0 auto 48px}
+.mockups-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1400px;margin:0 auto}
+.mockup-item{overflow:hidden;border-radius:4px;box-shadow:0 8px 32px rgba(44,26,14,.2)}
+.mockup-item img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.mockup-item:hover img{transform:scale(1.04)}
 
 /* FOOTER NAV */
 .proj-nav{padding:60px;border-top:1px solid rgba(193,113,74,.15);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto;background:var(--warm)}
@@ -216,14 +213,14 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
   <div class="mockups-header reveal">
     <div class="section-tag-light">Déclinaisons & Supports</div>
   </div>
-  <div class="mockup-main">
-    <img src="images/florever-mockup-enseigne.jpg" alt="Enseigne Flor'Ever">
-  </div>
-  <div class="mockup-duo">
-    <div class="mockup-half">
+  <div class="mockups-grid-3">
+    <div class="mockup-item">
+      <img src="images/florever-mockup-enseigne.jpg" alt="Enseigne Flor'Ever">
+    </div>
+    <div class="mockup-item">
       <img src="images/florever-mockup-kraft.jpg" alt="Flor'Ever sur papier kraft">
     </div>
-    <div class="mockup-half">
+    <div class="mockup-item">
       <img src="images/florever-mockup-cartes.jpg" alt="Cartes de visite Flor'Ever">
     </div>
   </div>
