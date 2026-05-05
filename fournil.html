@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Fournil des Alpes — Identité Visuelle · Hedi Lahmanes</title>
+<link rel="icon" type="image/svg+xml" href="images/fournil-logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --stone:#2C2C2A;
+  --stone-mid:#4A4845;
+  --wheat:#C8963E;
+  --gold:#FEC818;
+  --brown:#5E2E16;
+  --cream:#FAF7F0;
+  --warm:#F5F0E8;
+  --linen:#EDE5D0;
+  --text:#1A1916;
+  --text-mid:#4A3F2F;
+  --text-light:#8C7A60;
+}
+html{scroll-behavior:smooth}
+body{background:var(--warm);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(245,240,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(44,44,42,.08)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.15em;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--wheat)}
+.nav-back{color:var(--text-light);text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px;transition:color .3s}
+.nav-back::before{content:'←';font-size:16px;transition:transform .3s}
+.nav-back:hover{color:var(--wheat)}
+.nav-back:hover::before{transform:translateX(-4px)}
+
+/* HERO — pierre + blé */
+.hero{height:100vh;position:relative;display:flex;align-items:flex-end;padding:80px 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--stone) 0%,var(--stone-mid) 45%,#6B5A3E 80%,var(--wheat) 100%)}
+.hero-topo{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cellipse cx='300' cy='300' rx='280' ry='180' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='230' ry='140' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='180' ry='100' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='130' ry='65' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='80' ry='35' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");background-size:500px}
+.hero-accent{position:absolute;bottom:0;right:0;width:50%;height:100%;background:linear-gradient(to left,rgba(200,150,62,.12),transparent);pointer-events:none}
+.hero-number{position:absolute;top:50%;right:60px;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:28vw;color:rgba(255,255,255,.03);line-height:1;pointer-events:none}
+.hero-content{position:relative;z-index:2}
+.hero-tag{display:inline-block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:6px 14px;margin-bottom:24px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,140px);line-height:.88;letter-spacing:.01em;color:#fff}
+.hero-title-accent{color:var(--gold)}
+.hero-sub{margin-top:20px;font-size:14px;letter-spacing:.1em;color:rgba(255,255,255,.45);text-transform:uppercase}
+.hero-scroll{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll-line{width:1px;height:60px;background:rgba(255,255,255,.15);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(.5);opacity:.8}}
+
+/* INTRO — fond linen */
+.intro{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1400px;margin:0 auto}
+.intro-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--wheat);margin-bottom:20px}
+.logo-display{background:var(--linen);padding:60px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(44,44,42,.08)}
+.logo-display img{max-width:300px;width:100%}
+.intro-badge{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:rgba(200,150,62,.1);color:var(--wheat);border:1px solid rgba(200,150,62,.25);padding:5px 12px;margin-bottom:20px}
+.intro-text h2{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.05em;color:var(--text);margin-bottom:24px;line-height:1}
+.intro-text p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:16px}
+.intro-meta{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(44,44,42,.08)}
+.meta-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px}
+.meta-value{font-size:14px;color:var(--text)}
+
+/* TYPO — fond pierre */
+.typo-section{background:var(--stone);padding:100px 60px}
+.section-inner{max-width:1400px;margin:0 auto}
+.section-tag-light{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:60px;display:flex;align-items:center;gap:20px}
+.section-tag-light::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+.section-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--wheat);margin-bottom:60px;display:flex;align-items:center;gap:20px}
+.section-tag::after{content:'';flex:1;height:1px;background:rgba(200,150,62,.2)}
+.typo-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.font-block{padding:40px;background:rgba(255,255,255,.04)}
+.font-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:24px}
+.font-name{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:6px}
+.font-specimen-1{font-size:52px;line-height:1;color:#fff;font-weight:700;letter-spacing:.02em}
+.font-big-a{font-size:110px;line-height:1;color:rgba(255,255,255,.1);font-weight:700}
+.font-weights{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.font-weight-tag{font-size:11px;padding:4px 10px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);letter-spacing:.08em}
+
+/* COULEURS — fond crème */
+.colors-section{padding:100px 60px;background:var(--cream)}
+.colors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+.color-card{aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;position:relative;overflow:hidden}
+.color-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.3),transparent)}
+.color-name{position:relative;z-index:1;font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.color-hex{position:relative;z-index:1;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase;font-family:monospace}
+
+/* MOCKUPS — dégradé pierre→blé */
+.mockups-section{background:linear-gradient(160deg,var(--stone) 0%,var(--stone-mid) 45%,#6B5A3E 80%,var(--wheat) 100%);padding:80px 60px 100px}
+.mockups-header{max-width:1400px;margin:0 auto 48px}
+.mockups-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1400px;margin:0 auto}
+.mockup-item{overflow:hidden;border-radius:4px;box-shadow:0 8px 32px rgba(26,25,22,.4)}
+.mockup-item img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.mockup-item:hover img{transform:scale(1.04)}
+
+/* FOOTER */
+.proj-nav{padding:60px;border-top:1px solid rgba(44,44,42,.08);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.proj-nav a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .3s}
+.proj-nav a:hover{color:var(--wheat)}
+.proj-nav-label{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--text);letter-spacing:.05em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">H<span>.</span>L</a>
+  <a href="index.html#realisations" class="nav-back">Retour aux réalisations</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-topo"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-number">03</div>
+  <div class="hero-content">
+    <div class="hero-tag">Identité Visuelle · Boulangerie</div>
+    <h1 class="hero-title">Le Fournil<br><span class="hero-title-accent">des Alpes</span></h1>
+    <p class="hero-sub">Artisanal · Local · Authentique</p>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="reveal">
+    <div class="intro-label">Logo & Identité</div>
+    <div class="logo-display">
+      <img src="images/fournil-logo.svg" alt="Logo Le Fournil des Alpes">
+    </div>
+  </div>
+  <div class="intro-text reveal">
+    <div class="intro-badge">Projet fictif</div>
+    <div class="intro-label">Contexte du projet</div>
+    <h2>Une boulangerie alpine authentique</h2>
+    <p>Dans le cadre de mes études en design graphique, j'ai imaginé l'identité visuelle du Fournil des Alpes, une boulangerie fictive inspirée des traditions alpines.</p>
+    <p>L'objectif était de concevoir une identité chaleureuse et authentique, reflétant à la fois le savoir-faire artisanal, la nature environnante et la convivialité du lieu.</p>
+    <p>J'ai opté pour une typographie manuscrite évoquant la proximité et le fait-main. Les deux pelles à pain encadrant le nom renforcent l'identité boulangère, tandis que le brin de blé doré symbolise les matières premières naturelles et locales.</p>
+    <div class="intro-meta">
+      <div class="meta-item">
+        <div class="meta-label">Catégorie</div>
+        <div class="meta-value">Identité Visuelle</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Outils</div>
+        <div class="meta-value">Illustrator · Photoshop</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Année</div>
+        <div class="meta-value">2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPO — fond pierre -->
+<section class="typo-section">
+  <div class="section-inner">
+    <div class="section-tag-light reveal">Typographie</div>
+    <div class="typo-grid reveal">
+      <div class="font-block">
+        <div class="font-label">Police principale</div>
+        <div class="font-name">Bagel Fat One · Sans Serif</div>
+        <div class="font-specimen-1">Le Fournil</div>
+        <div class="font-weights">
+          <span class="font-weight-tag">Light</span>
+          <span class="font-weight-tag">Book</span>
+          <span class="font-weight-tag">Medium</span>
+          <span class="font-weight-tag">Demi</span>
+          <span class="font-weight-tag">Bold</span>
+        </div>
+      </div>
+      <div class="font-block">
+        <div class="font-label">Famille</div>
+        <div class="font-name">Sans Serif font family</div>
+        <div class="font-big-a">A</div>
+        <div class="font-weights">
+          <span class="font-weight-tag">Regular</span>
+          <span class="font-weight-tag">Bold</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COULEURS -->
+<section class="colors-section">
+  <div class="section-inner">
+    <div class="section-tag reveal">Palette de couleurs</div>
+    <div class="colors-grid reveal">
+      <div class="color-card" style="background:#5E2E16">
+        <span class="color-name">Brun four</span>
+        <span class="color-hex">#5E2E16</span>
+      </div>
+      <div class="color-card" style="background:#FEC818">
+        <span class="color-name">Blé doré</span>
+        <span class="color-hex">#FEC818</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section class="mockups-section">
+  <div class="mockups-header reveal">
+    <div class="section-tag-light">Déclinaisons & Supports</div>
+  </div>
+  <div class="mockups-grid-3">
+    <div class="mockup-item">
+      <img src="images/fournil-mockup-enseigne.jpg" alt="Enseigne Le Fournil des Alpes">
+    </div>
+    <div class="mockup-item">
+      <img src="images/fournil-mockup-boulangerie.jpg" alt="Mockup boulangerie">
+    </div>
+    <div class="mockup-item">
+      <img src="images/fournil-mockup-tissu.jpg" alt="Mockup tissu">
+    </div>
+  </div>
+</section>
+
+<!-- NAV PROJETS -->
+<div class="proj-nav">
+  <a href="florever.html">← <span class="proj-nav-label">Flor'Ever</span></a>
+  <a href="cafeine.html"><span class="proj-nav-label">Caféine</span> →</a>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
