@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariette Rataud — Maquette Web · Hedi Lahmanes</title>
+<link rel="icon" type="image/svg+xml" href="images/mariette-logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green-dark:#1B3A2D;
+  --green:#2D5C3F;
+  --green-mid:#3D7A52;
+  --orange:#E8621A;
+  --orange-light:#F5893A;
+  --cream:#F0F5E8;
+  --warm:#FAFAF5;
+  --text:#1A2E1A;
+  --text-mid:#3D5C3D;
+  --text-light:#7A9A7A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--warm);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,58,45,.08)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.15em;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-back{color:var(--text-light);text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px;transition:color .3s}
+.nav-back::before{content:'←';font-size:16px;transition:transform .3s}
+.nav-back:hover{color:var(--green)}
+.nav-back:hover::before{transform:translateX(-4px)}
+
+/* HERO */
+.hero{height:100vh;position:relative;display:flex;align-items:flex-end;padding:80px 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 50%,var(--green-mid) 100%)}
+.hero-img{position:absolute;right:0;top:0;width:55%;height:100%;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.35}
+.hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--green-dark) 0%,transparent 50%);z-index:1}
+.hero-number{position:absolute;top:50%;right:60px;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:28vw;color:rgba(255,255,255,.03);line-height:1;pointer-events:none}
+.hero-content{position:relative;z-index:2}
+.hero-tag{display:inline-block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:6px 14px;margin-bottom:24px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,150px);line-height:.9;letter-spacing:-.01em;color:#fff}
+.hero-title em{font-style:normal;color:var(--orange-light)}
+.hero-sub{margin-top:20px;font-size:14px;letter-spacing:.1em;color:rgba(255,255,255,.45);text-transform:uppercase}
+.hero-scroll{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll-line{width:1px;height:60px;background:rgba(255,255,255,.15);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(.5);opacity:.8}}
+
+/* INTRO */
+.intro{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1400px;margin:0 auto}
+.intro-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+.screen-display{background:var(--green-dark);overflow:hidden;border-radius:4px}
+.screen-display img{width:100%;display:block}
+.intro-badge{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:rgba(232,98,26,.08);color:var(--orange);border:1px solid rgba(232,98,26,.2);padding:5px 12px;margin-bottom:20px}
+.intro-text h2{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.05em;color:var(--text);margin-bottom:24px;line-height:1}
+.intro-text p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:16px}
+.intro-meta{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(27,58,45,.1)}
+.meta-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px}
+.meta-value{font-size:14px;color:var(--text)}
+
+/* TYPO — fond vert foncé */
+.typo-section{background:var(--green-dark);padding:100px 60px}
+.section-inner{max-width:1400px;margin:0 auto}
+.section-tag-light{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:60px;display:flex;align-items:center;gap:20px}
+.section-tag-light::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06)}
+.section-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:60px;display:flex;align-items:center;gap:20px}
+.section-tag::after{content:'';flex:1;height:1px;background:rgba(232,98,26,.2)}
+.typo-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.font-block{padding:40px;background:rgba(255,255,255,.04)}
+.font-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:24px}
+.font-name{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:10px}
+.font-specimen-inter{font-size:52px;line-height:1;color:#fff;font-family:'DM Sans',sans-serif;font-weight:500}
+.font-specimen-inria{font-size:48px;line-height:1;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:300}
+.font-big-aa{font-size:90px;line-height:1;color:rgba(255,255,255,.08);font-weight:700}
+.font-weights{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.font-weight-tag{font-size:11px;padding:4px 10px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);letter-spacing:.08em}
+
+/* COULEURS */
+.colors-section{padding:100px 60px;background:var(--cream)}
+.colors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.color-card{aspect-ratio:1;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;position:relative;overflow:hidden}
+.color-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.3),transparent)}
+.color-name{position:relative;z-index:1;font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.color-hex{position:relative;z-index:1;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;font-family:monospace;text-transform:uppercase}
+
+/* MOCKUPS — fond vert */
+.mockups-section{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);padding:80px 60px 100px;position:relative;overflow:hidden}
+.mockups-section::before{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cellipse cx='300' cy='300' rx='280' ry='180' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='200' ry='120' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");background-size:500px}
+.mockups-header{max-width:1400px;margin:0 auto 48px;position:relative;z-index:1}
+.mockup-main{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.mockup-main img{width:100%;display:block;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.mockup-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1400px;margin:16px auto 0;position:relative;z-index:1}
+.mockup-half{overflow:hidden;border-radius:4px;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.mockup-half img{width:100%;height:300px;object-fit:cover;object-position:top;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.mockup-half:hover img{transform:scale(1.03)}
+
+/* ILLUSTRATIONS flottantes */
+.mockup-float{position:absolute;z-index:2}
+.mockup-float-1{bottom:-20px;left:-40px;width:160px;transform:rotate(-12deg)}
+.mockup-float-2{top:20px;right:-20px;width:130px;transform:rotate(8deg)}
+
+/* FOOTER */
+.proj-nav{padding:60px;border-top:1px solid rgba(27,58,45,.1);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.proj-nav a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .3s}
+.proj-nav a:hover{color:var(--green)}
+.proj-nav-label{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--text);letter-spacing:.05em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">H<span>.</span>L</a>
+  <a href="index.html#realisations" class="nav-back">Retour aux réalisations</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img">
+    <img src="images/mariette-bg-avocat.jpg" alt="Fond avocat">
+  </div>
+  <div class="hero-number">05</div>
+  <div class="hero-content">
+    <div class="hero-tag">Maquettage Web · UI Design</div>
+    <h1 class="hero-title">Mariette<br><em>Rataud</em></h1>
+    <p class="hero-sub">Conseillère en Nutrition · Site Web</p>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="reveal">
+    <div class="intro-label">Maquette & UI</div>
+    <div class="screen-display">
+      <img src="images/mariette-mockup-macbook.jpg" alt="Site Mariette Rataud sur MacBook">
+    </div>
+  </div>
+  <div class="intro-text reveal">
+    <div class="intro-badge">Projet client</div>
+    <div class="intro-label">Contexte du projet</div>
+    <h2>Un site web pour une nutritionniste</h2>
+    <p>Dans le cadre de mon projet fil rouge de ma deuxième année à My Digital School (2024-2025), j'ai eu l'opportunité de travailler sur la conception d'une maquette web pour Mariette Rataud, préparatrice en pharmacie depuis 20 ans et conseillère en nutrition certifiée.</p>
+    <p>L'objectif était de créer une identité visuelle fraîche, rassurante et professionnelle, mettant en avant son approche bienveillante et ses différentes offres d'accompagnement.</p>
+    <p>J'ai choisi une direction graphique douce et épurée, qui reflète la personnalité de Mariette tout en garantissant une navigation fluide et une expérience utilisateur accessible.</p>
+    <div class="intro-meta">
+      <div class="meta-item">
+        <div class="meta-label">Catégorie</div>
+        <div class="meta-value">Maquettage · UI/UX</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Outils</div>
+        <div class="meta-value">Figma</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Année</div>
+        <div class="meta-value">2024–2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPO — fond vert foncé -->
+<section class="typo-section">
+  <div class="section-inner">
+    <div class="section-tag-light reveal">Typographie</div>
+    <div class="typo-grid reveal">
+      <div class="font-block">
+        <div class="font-label">Police principale</div>
+        <div class="font-name">Inter · Sans Serif</div>
+        <div class="font-specimen-inter">Inter</div>
+        <div class="font-weights">
+          <span class="font-weight-tag">Light</span>
+          <span class="font-weight-tag">Book</span>
+          <span class="font-weight-tag">Medium</span>
+          <span class="font-weight-tag">Demi</span>
+          <span class="font-weight-tag">Bold</span>
+        </div>
+      </div>
+      <div class="font-block">
+        <div class="font-label">Police secondaire</div>
+        <div class="font-name">Inria Sans · Sans Serif</div>
+        <div class="font-specimen-inria">Inria Sans</div>
+        <div class="font-weights">
+          <span class="font-weight-tag">Light</span>
+          <span class="font-weight-tag">Medium</span>
+          <span class="font-weight-tag">Bold</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COULEURS -->
+<section class="colors-section">
+  <div class="section-inner">
+    <div class="section-tag reveal">Palette de couleurs</div>
+    <div class="colors-grid reveal">
+      <div class="color-card" style="background:#1B3A2D">
+        <span class="color-name">Vert forêt</span>
+        <span class="color-hex">#1B3A2D</span>
+      </div>
+      <div class="color-card" style="background:#E8621A">
+        <span class="color-name">Orange vitalité</span>
+        <span class="color-hex">#E8621A</span>
+      </div>
+      <div class="color-card" style="background:#C8E6B0">
+        <span class="color-name">Vert doux</span>
+        <span class="color-hex">#C8E6B0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section class="mockups-section">
+  <div class="mockups-header reveal">
+    <div class="section-tag-light">Pages & Écrans</div>
+  </div>
+  <div class="mockup-main reveal">
+    <img src="images/mariette-mockup-macbook.jpg" alt="MacBook Mariette Rataud">
+  </div>
+  <div class="mockup-duo reveal">
+    <div class="mockup-half">
+      <img src="images/mariette-maquette.jpg" alt="Maquette page accueil">
+    </div>
+    <div class="mockup-half">
+      <img src="images/mariette-page-pro.jpg" alt="Page professionnels de santé">
+    </div>
+  </div>
+</section>
+
+<!-- NAV PROJETS -->
+<div class="proj-nav">
+  <a href="index.html#realisations">← <span class="proj-nav-label">Réalisations</span></a>
+  <a href="impact.html"><span class="proj-nav-label">Impact Boxing</span> →</a>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
