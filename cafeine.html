@@ -237,3 +237,37 @@ reveals.forEach(r => obs.observe(r));
 </script>
 </body>
 </html>
+<style>
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  nav .nav-logo{font-size:18px}
+  .hero{padding:60px 20px 60px}
+  .hero-title{font-size:clamp(52px,12vw,90px)}
+  .hero-img{width:100%;opacity:.2}
+  .hero-number{display:none}
+  .intro{grid-template-columns:1fr;padding:60px 20px;gap:40px}
+  .context{padding:60px 20px}
+  .context-top{grid-template-columns:1fr;gap:32px}
+  .context-body{grid-template-columns:1fr}
+  .context-meta{flex-wrap:wrap;gap:24px}
+  .typo-section{padding:60px 20px}
+  .typo-grid{grid-template-columns:1fr;gap:3px}
+  .colors-section{padding:60px 20px}
+  .colors-grid{grid-template-columns:1fr 1fr}
+  .mockups-section{padding:60px 20px 80px}
+  .mockups-grid-3{grid-template-columns:1fr;gap:12px}
+  .mockup-item img{height:220px}
+  .maquettes-section{padding:60px 20px}
+  .maquettes-grid{grid-template-columns:1fr;gap:24px}
+  .proj-nav{padding:32px 20px;flex-direction:column;gap:24px;text-align:center}
+  .proj-nav-label{font-size:24px}
+  .section-inner{padding:0}
+  .hero-scroll{display:none}
+}
+@media(max-width:480px){
+  .hero-title{font-size:clamp(40px,10vw,64px)}
+  .hero-tag{font-size:9px;padding:5px 10px}
+  .hero-sub{font-size:11px}
+  .colors-grid{grid-template-columns:1fr}
+}
+</style>
