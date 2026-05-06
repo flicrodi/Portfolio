@@ -265,7 +265,7 @@ footer{padding:28px 8vw;border-top:1px solid var(--gray);display:flex;justify-co
   </div>
   <div class="real-grid">
     <div class="real-item visible" data-cat="maquettage"><div class="real-label">Webdesign</div><div class="real-inner ph ph-1"><div class="ph-letter">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Impact Boxing</div></div></div>
-    <div class="real-item visible" data-cat="maquettage" onclick="window.location.href='mariette.html'" style="cursor:pointer"><div class="real-label">Webdesign</div><div class="real-inner ph ph-3" style="background:#1B3A2D"><img src="images/mariette-mockup-macbook.png" alt="Nutritionniste" style="width:100%;height:100%;object-fit:contain;object-position:center;position:absolute;inset:0"><div class="ph-letter" style="display:none">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Nutritionniste</div></div></div>
+    <div class="real-item visible" data-cat="maquettage" onclick="window.location.href='nutritionniste.html'" style="cursor:pointer"><div class="real-label">Webdesign</div><div class="real-inner ph ph-3" style="background:#1B3A2D"><img src="images/mariette-mockup-macbook.png" alt="Nutritionniste" style="width:100%;height:100%;object-fit:contain;object-position:center;position:absolute;inset:0"><div class="ph-letter" style="display:none">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Maquettage · Figma</div><div class="real-overlay-text">Nutritionniste</div></div></div>
     <div class="real-item visible" data-cat="identite" onclick="window.location.href='florever.html'" style="cursor:pointer"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-2"><img src="images/florever-mockup-enseigne.jpg" alt="Flor'Ever" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"><div class="ph-letter" style="display:none">01</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Flor'Ever</div></div></div>
     <div class="real-item visible" data-cat="identite" onclick="window.location.href='fournil.html'" style="cursor:pointer"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-5"><img src="images/fournil-mockup-tissu.jpg" alt="Le Fournil des Alpes" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"><div class="ph-letter" style="display:none">02</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Le Fournil des Alpes</div></div></div>
     <div class="real-item visible" data-cat="identite" onclick="window.location.href='cafeine.html'" style="cursor:pointer"><div class="real-label">Identité Visuelle</div><div class="real-inner ph ph-8"><img src="images/cafeine-mockup-cup-table.jpg" alt="Caféine" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"><div class="ph-letter" style="display:none">03</div></div><div class="real-overlay"><div class="real-overlay-tag">Identité Visuelle</div><div class="real-overlay-text">Caféine</div></div></div>
@@ -321,4 +321,29 @@ function filterReal(cat,btn){
 }
 </script>
 </body>
-</html>
+</html><style>
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .hero-section{padding:100px 20px 60px}
+  .hero-title{font-size:clamp(48px,12vw,80px)}
+  .hero-buttons{flex-direction:column;gap:12px}
+  #projets-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .proj-cell:nth-child(1),.proj-cell:nth-child(2),.proj-cell:nth-child(3),.proj-cell:nth-child(4){grid-column:auto;grid-row:auto}
+  #projets-grid{grid-template-rows:220px 220px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-photo{width:160px;height:160px}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .real-grid{grid-template-columns:1fr 1fr}
+  #realisations{padding:60px 20px}
+  .real-cats{flex-wrap:wrap;gap:8px}
+  .contact-grid{grid-template-columns:1fr}
+  footer{padding:40px 20px}
+  .about-section{padding:60px 20px}
+  .section-title{font-size:clamp(36px,8vw,60px)}
+}
+@media(max-width:480px){
+  #projets-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,200px)}
+  .real-grid{grid-template-columns:1fr}
+  .hero-title{font-size:clamp(40px,10vw,64px)}
+}
+</style>
