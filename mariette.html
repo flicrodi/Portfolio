@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariette Rataud — Maquette Web · Hedi Lahmanes</title>
+<title>Nutritionniste — Maquette Web · Hedi Lahmanes</title>
 <link rel="icon" type="image/svg+xml" href="images/mariette-logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -32,31 +32,33 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
 .nav-back:hover{color:var(--green)}
 .nav-back:hover::before{transform:translateX(-4px)}
 
-/* HERO */
-.hero{height:100vh;position:relative;display:flex;align-items:flex-end;padding:80px 60px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 50%,var(--green-mid) 100%)}
-.hero-img{position:absolute;right:0;top:0;width:55%;height:100%;overflow:hidden}
-.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.35}
-.hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--green-dark) 0%,transparent 50%);z-index:1}
-.hero-number{position:absolute;top:50%;right:60px;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:28vw;color:rgba(255,255,255,.03);line-height:1;pointer-events:none}
-.hero-content{position:relative;z-index:2}
-.hero-tag{display:inline-block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:6px 14px;margin-bottom:24px}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,150px);line-height:.9;letter-spacing:-.01em;color:#fff}
+/* HERO plein écran avec MacBook */
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%)}
+.hero-avocat{position:absolute;inset:0}
+.hero-avocat img{width:100%;height:100%;object-fit:cover;opacity:.2;filter:saturate(0.8)}
+.hero-avocat::after{content:'';position:absolute;inset:0;background:rgba(27,58,45,.6)}
+.hero-macbook{position:relative;z-index:2;width:75%;max-width:900px;filter:drop-shadow(0 40px 80px rgba(0,0,0,.6))}
+.hero-macbook img{width:100%;display:block}
+.hero-content{position:absolute;bottom:80px;left:60px;z-index:3}
+.hero-tag{display:inline-block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:6px 14px;margin-bottom:16px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,100px);line-height:.9;color:#fff}
 .hero-title em{font-style:normal;color:var(--orange-light)}
-.hero-sub{margin-top:20px;font-size:14px;letter-spacing:.1em;color:rgba(255,255,255,.45);text-transform:uppercase}
-.hero-scroll{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll{position:absolute;bottom:40px;right:60px;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.2em;text-transform:uppercase;z-index:3}
 .hero-scroll-line{width:1px;height:60px;background:rgba(255,255,255,.15);animation:scrollLine 2s ease-in-out infinite}
 @keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(.5);opacity:.8}}
 
-/* INTRO */
-.intro{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1400px;margin:0 auto}
-.intro-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
-.screen-display{background:var(--green-dark);overflow:hidden;border-radius:4px}
-.screen-display img{width:100%;display:block}
-.intro-badge{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:rgba(232,98,26,.08);color:var(--orange);border:1px solid rgba(232,98,26,.2);padding:5px 12px;margin-bottom:20px}
-.intro-text h2{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.05em;color:var(--text);margin-bottom:24px;line-height:1}
-.intro-text p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:16px}
-.intro-meta{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(27,58,45,.1)}
+/* CONTEXTE — layout asymétrique */
+.context{padding:120px 60px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+.context-aside{}
+.context-aside-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.context-aside-title{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.9;color:var(--text);letter-spacing:.02em}
+.context-aside-title em{font-style:normal;color:var(--green)}
+.context-badge{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:rgba(232,98,26,.08);color:var(--orange);border:1px solid rgba(232,98,26,.2);padding:5px 12px;margin-top:24px}
+.context-main{}
+.context-intro{font-size:20px;line-height:1.6;color:var(--text);font-weight:400;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(27,58,45,.1)}
+.context-body{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:16px}
+.context-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(27,58,45,.1)}
 .meta-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px}
 .meta-value{font-size:14px;color:var(--text)}
 
@@ -73,7 +75,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
 .font-name{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:10px}
 .font-specimen-inter{font-size:52px;line-height:1;color:#fff;font-family:'DM Sans',sans-serif;font-weight:500}
 .font-specimen-inria{font-size:48px;line-height:1;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:300}
-.font-big-aa{font-size:90px;line-height:1;color:rgba(255,255,255,.08);font-weight:700}
 .font-weights{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 .font-weight-tag{font-size:11px;padding:4px 10px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);letter-spacing:.08em}
 
@@ -85,21 +86,19 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
 .color-name{position:relative;z-index:1;font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
 .color-hex{position:relative;z-index:1;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;font-family:monospace;text-transform:uppercase}
 
-/* MOCKUPS — fond vert */
-.mockups-section{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);padding:80px 60px 100px;position:relative;overflow:hidden}
-.mockups-section::before{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cellipse cx='300' cy='300' rx='280' ry='180' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cellipse cx='300' cy='300' rx='200' ry='120' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");background-size:500px}
-.mockups-header{max-width:1400px;margin:0 auto 48px;position:relative;z-index:1}
-.mockup-main{max-width:1400px;margin:0 auto;position:relative;z-index:1}
-.mockup-main img{width:100%;display:block;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.mockup-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1400px;margin:16px auto 0;position:relative;z-index:1}
-.mockup-half{overflow:hidden;border-radius:4px;box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.mockup-half img{width:100%;height:300px;object-fit:cover;object-position:top;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-.mockup-half:hover img{transform:scale(1.03)}
-
-/* ILLUSTRATIONS flottantes */
-.mockup-float{position:absolute;z-index:2}
-.mockup-float-1{bottom:-20px;left:-40px;width:160px;transform:rotate(-12deg)}
-.mockup-float-2{top:20px;right:-20px;width:130px;transform:rotate(8deg)}
+/* MAQUETTES — scroll horizontal premium */
+.maquettes-section{background:var(--green-dark);padding:100px 0}
+.maquettes-header{padding:0 60px 60px;max-width:1400px;margin:0 auto}
+.maquettes-scroll{display:flex;gap:40px;padding:20px 60px 40px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;cursor:grab}
+.maquettes-scroll:active{cursor:grabbing}
+.maquettes-scroll::-webkit-scrollbar{height:4px}
+.maquettes-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.05)}
+.maquettes-scroll::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+.maquette-card{flex:0 0 380px;scroll-snap-align:start;position:relative}
+.maquette-card-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
+.maquette-card-inner{overflow:hidden;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.06)}
+.maquette-card-inner img{width:100%;display:block;transition:transform .6s ease}
+.maquette-card:hover .maquette-card-inner img{transform:translateY(-5px)}
 
 /* FOOTER */
 .proj-nav{padding:60px;border-top:1px solid rgba(27,58,45,.1);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
@@ -119,17 +118,18 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
   <a href="index.html#realisations" class="nav-back">Retour aux réalisations</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — MacBook centré -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-img">
+  <div class="hero-avocat">
     <img src="images/mariette-bg-avocat.jpg" alt="Fond avocat">
   </div>
-  <div class="hero-number">05</div>
+  <div class="hero-macbook">
+    <img src="images/mariette-mockup-macbook.jpg" alt="Site Mariette Rataud sur MacBook">
+  </div>
   <div class="hero-content">
-    <div class="hero-tag">Maquettage Web · UI Design</div>
-    <h1 class="hero-title">Mariette<br><em>Rataud</em></h1>
-    <p class="hero-sub">Conseillère en Nutrition · Site Web</p>
+    <div class="hero-tag">Maquettage Web · UI/UX · Figma</div>
+    <h1 class="hero-title">Nutri<em>tionniste</em></h1>
   </div>
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
@@ -137,22 +137,19 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="intro">
+<!-- CONTEXTE -->
+<section class="context">
   <div class="reveal">
-    <div class="intro-label">Maquette & UI</div>
-    <div class="screen-display">
-      <img src="images/mariette-mockup-macbook.jpg" alt="Site Mariette Rataud sur MacBook">
-    </div>
+    <div class="context-aside-label">Projet</div>
+    <div class="context-aside-title">Mariette<br><em>Rataud</em></div>
+    <div class="context-badge">Projet client</div>
   </div>
-  <div class="intro-text reveal">
-    <div class="intro-badge">Projet client</div>
-    <div class="intro-label">Contexte du projet</div>
-    <h2>Un site web pour une nutritionniste</h2>
-    <p>Dans le cadre de mon projet fil rouge de ma deuxième année à My Digital School (2024-2025), j'ai eu l'opportunité de travailler sur la conception d'une maquette web pour Mariette Rataud, préparatrice en pharmacie depuis 20 ans et conseillère en nutrition certifiée.</p>
-    <p>L'objectif était de créer une identité visuelle fraîche, rassurante et professionnelle, mettant en avant son approche bienveillante et ses différentes offres d'accompagnement.</p>
-    <p>J'ai choisi une direction graphique douce et épurée, qui reflète la personnalité de Mariette tout en garantissant une navigation fluide et une expérience utilisateur accessible.</p>
-    <div class="intro-meta">
+  <div class="reveal">
+    <p class="context-intro">Conception d'une maquette web pour Mariette Rataud, conseillère en nutrition certifiée, préparatrice en pharmacie depuis 20 ans.</p>
+    <p class="context-body">Dans le cadre de mon projet fil rouge de ma deuxième année à My Digital School (2024-2025), j'ai eu l'opportunité de travailler sur la conception d'une maquette web one-page complète pour une vraie cliente.</p>
+    <p class="context-body">L'objectif était de créer une identité visuelle fraîche et rassurante, mettant en avant son approche bienveillante, ses différentes offres d'accompagnement, et ses témoignages clients — tout en garantissant une expérience utilisateur fluide et accessible.</p>
+    <p class="context-body">J'ai choisi une direction graphique douce et épurée, qui reflète la personnalité de Mariette tout en assurant une lisibilité optimale sur tous les supports.</p>
+    <div class="context-meta">
       <div class="meta-item">
         <div class="meta-label">Catégorie</div>
         <div class="meta-value">Maquettage · UI/UX</div>
@@ -169,7 +166,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
   </div>
 </section>
 
-<!-- TYPO — fond vert foncé -->
+<!-- TYPO -->
 <section class="typo-section">
   <div class="section-inner">
     <div class="section-tag-light reveal">Typographie</div>
@@ -221,20 +218,23 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:24px 60px;display
   </div>
 </section>
 
-<!-- MOCKUPS -->
-<section class="mockups-section">
-  <div class="mockups-header reveal">
-    <div class="section-tag-light">Pages & Écrans</div>
+<!-- MAQUETTES COMPLÈTES -->
+<section class="maquettes-section">
+  <div class="maquettes-header reveal">
+    <div class="section-tag-light">Maquettes complètes</div>
   </div>
-  <div class="mockup-main reveal">
-    <img src="images/mariette-mockup-macbook.jpg" alt="MacBook Mariette Rataud">
-  </div>
-  <div class="mockup-duo reveal">
-    <div class="mockup-half">
-      <img src="images/mariette-maquette.jpg" alt="Maquette page accueil">
+  <div class="maquettes-scroll">
+    <div class="maquette-card">
+      <div class="maquette-card-label">Page Accueil</div>
+      <div class="maquette-card-inner">
+        <img src="images/mariette-maquette.jpg" alt="Maquette page accueil">
+      </div>
     </div>
-    <div class="mockup-half">
-      <img src="images/mariette-page-pro.jpg" alt="Page professionnels de santé">
+    <div class="maquette-card">
+      <div class="maquette-card-label">Page Professionnels</div>
+      <div class="maquette-card-inner">
+        <img src="images/mariette-page-pro.jpg" alt="Page professionnels de santé">
+      </div>
     </div>
   </div>
 </section>
@@ -251,6 +251,14 @@ const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold: 0.1});
 reveals.forEach(r => obs.observe(r));
+
+// Drag to scroll
+const scroll = document.querySelector('.maquettes-scroll');
+let isDown = false, startX, scrollLeft;
+scroll.addEventListener('mousedown', e => { isDown=true; startX=e.pageX-scroll.offsetLeft; scrollLeft=scroll.scrollLeft; });
+scroll.addEventListener('mouseleave', () => isDown=false);
+scroll.addEventListener('mouseup', () => isDown=false);
+scroll.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); const x=e.pageX-scroll.offsetLeft; scroll.scrollLeft=scrollLeft-(x-startX)*1.5; });
 </script>
 </body>
 </html>
